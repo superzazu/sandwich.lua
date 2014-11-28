@@ -1,7 +1,7 @@
 # sandwich.lua
 
 *sandwich* is a resource manager made with [LÖVE](https://love2d.org). 
-It allows you to avoid loading the same resource multiple times during your program execution.
+It prevents you from loading the same resource multiple times during your program execution.
 It supports the "basic" LÖVE resource types (such as images, quads, fonts, audio streams), but you can add your own types easily.
      
 ## Quickstart
