@@ -8,11 +8,8 @@ It supports the "basic" LÖVE resource types (such as images, quads, fonts, audi
 ```
 local sandwich = require 'sandwich'     
      
-sandwich.add('image', 'my_image.png') -- adds the resource in the sandwich     
-sandwich.get('image', 'my_image.png') -- gets the resource     
-      
-sandwich.add('quad', 'my_quad', 0,0, 32,32, 64, 64) -- adds the resource in the sandwich     
-sandwich.get('quad', 'my_quad') -- gets the resource     
+sandwich.get('image', 'my_image.png')     
+sandwich.get('quad', 'my_quad', 0,0, 32,32, 64, 64)     
 ```
 
 ## Add resource types
@@ -22,5 +19,5 @@ local callback = function (resource_name, ...) -- function which makes a resourc
 	return love.graphics.newQuad(...)
 end
 sandwich.addType('my_type', callback)
-sandwich.add('my_type', 'resource_name', 0,0, 32,32, 64, 64)
+sandwich.get('my_type', 'resource_name', 0,0, 32,32, 64, 64)
 ```

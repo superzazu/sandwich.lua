@@ -1,5 +1,5 @@
 local sandwich = {
-	_VERSION 		= 'sandwich v1.0.0',
+	_VERSION 		= 'sandwich v1.0.1',
 	_DESCRIPTION	= 'A LÖVE2D resource manager',
 	_URL			= 'http://github.com/superzazu/sandwich.lua'
 }
@@ -33,16 +33,14 @@ local callbacks = {
 
 	shader = function(resource_name, ...)
 		return love.graphics.newShader(resource_name, ...)
-	end,
-
-
+	end
 }
 
 sandwich.addType = function (type, callback)
 	callbacks[type] = callback
 end
 
-sandwich.add = function (type, resource_name, ...)
+sandwich.get = function (type, resource_name, ...)
 	if not resources[type] then
 		resources[type] = {}
 	end
@@ -50,10 +48,9 @@ sandwich.add = function (type, resource_name, ...)
 	if not resources[type][resource_name] then
 		resources[type][resource_name] = callbacks[type](resource_name, ...)
 	end
-end
 
-sandwich.get = function (type, resource_name)
 	return resources[type][resource_name]
 end
+
 
 return sandwich
