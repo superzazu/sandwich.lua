@@ -9,7 +9,7 @@ It supports the "basic" LÖVE resource types (such as images, quads, fonts, audi
 local sandwich = require 'sandwich'     
      
 my_image = sandwich.get('image', 'my_image.png')     
-my_quad = sandwich.get('quad', 'my_quad', 0,0, 32,32, 64, 64)     
+my_quad = sandwich.get('quad', 'my_quad', 0,0, 32,32, 64,64)     
 ```
 
 ## Add resource types
