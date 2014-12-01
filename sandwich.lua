@@ -48,6 +48,10 @@ local callbacks = {
 		return love.graphics.newFont(resource_name, ...)
 	end,
 
+	imagefont = function(resource_name, ...)
+		return love.graphics.newImageFont(resource_name, ...)
+	end,
+
 	mesh = function(resource_name, ...)
 		return love.graphics.newMesh(...)
 	end,
