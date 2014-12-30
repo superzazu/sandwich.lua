@@ -13,11 +13,16 @@ my_quad = sandwich.get('quad', 'my_quad', 0,0, 32,32, 64,64)
 ```
 
 ## Add resource types
+Example with [bump.lua](https://github.com/kikito/bump.lua) worlds:
 ```     
--- fake example with quads, same behaviour as above:
-local callback = function (resource_name, ...) -- function which makes a resource
-	return love.graphics.newQuad(...)
+-- note: you only do that once, at the beginning of your program
+local bump = require 'lib.bump'
+local sandwich = require 'lib.sandwich'
+     
+local callback_bumpworld = function (resource_name, ...) -- function that makes a resource
+	return bump.newWorld(...)
 end
-sandwich.addType('my_type', callback)
-my_resource = sandwich.get('my_type', 'my_resource', 0,0, 32,32, 64, 64)
+sandwich.addType('bumpworld', callback_bumpworld)
+
+my_world = sandwich.get('bumpworld', 'my_world', 32) -- creating a world
 ```
