@@ -25,6 +25,7 @@ local sandwich = {
 	]]
 }
 
+local prefix = ''
 local resources = {}
 
 local callbacks = {
@@ -70,11 +71,15 @@ sandwich.get = function (type, resource_name, ...)
 		resources[type] = {}
 	end
 
-	if not resources[type][resource_name] then
-		resources[type][resource_name] = callbacks[type](resource_name, ...)
+	if not resources[type][prefix..resource_name] then
+		resources[type][prefix..resource_name] = callbacks[type](prefix..resource_name, ...)
 	end
 
-	return resources[type][resource_name]
+	return resources[type][prefix..resource_name]
+end
+
+sandwich.setPrefix = function (p)
+	prefix = p
 end
 
 
