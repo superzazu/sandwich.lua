@@ -1,5 +1,5 @@
 local sandwich = {
-    _VERSION      = 'sandwich v1.0.0',
+    _VERSION      = 'sandwich v1.0.1',
     _DESCRIPTION  = 'A LÖVE2D resource manager',
     _URL          = 'http://github.com/superzazu/sandwich.lua',
     _LICENSE      = [[
